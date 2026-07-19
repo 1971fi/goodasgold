@@ -1,0 +1,10 @@
+{
+  "name": "ttp-contracts",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Uniswap v4 deps for TTP protocol (forge-std ships inside v4-core/lib)",
+  "dependencies": {
+    "@uniswap/v4-core": "1.0.2",
+    "@uniswap/v4-periphery": "1.0.3"
+  }
+}

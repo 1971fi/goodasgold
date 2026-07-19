@@ -1,0 +1,22 @@
+[profile.default]
+src = "src"
+test = "test"
+script = "script"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.26"
+optimizer = true
+optimizer_runs = 200
+evm_version = "cancun"
+via_ir = true   # ends stack-too-deep in scripts/tests; first compile is slower (cache after)
+
+# unsafe-typecast: every flagged cast is an intentional, reviewed narrowing of a bounded value:
+#   v4 BalanceDelta amount0/amount1 are int128 by definition, and swap amounts (ETH, USDG, 1971)
+#   fit uint128. Suppressed project-wide with this note rather than 11 inline annotations so the
+#   decision is auditable in one place. Re-review before mainnet if new casts are added.
+[lint]
+exclude_lints = ["unsafe-typecast"]
+
+# Testnet only. Mainnet RPC intentionally absent — GO MAINNET gate.
+[rpc_endpoints]
+robinhood_testnet = "${TESTNET_RPC_URL}"
