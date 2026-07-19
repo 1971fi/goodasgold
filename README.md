@@ -35,14 +35,15 @@ All source verified on Blockscout.
 
 ## Supply, fully accounted
 
-Genesis mint 1,000,000,000. Current total supply **650,000,000** after a 350M genesis burn.
+Genesis mint 1,000,000,000. 350M burned at genesis; the developer has since burned another
+7M through the redemption window at the published early-exit haircut. Circulating: **643,000,000**.
 
-| Bucket | Amount | % of supply | Where |
+| Bucket | Amount | % of circulating | Where |
 |---|---|---|---|
-| Market (pool + ask wall) | 503M | 77.4% | PoolManager, positions held by LpLocker |
-| Developer allocation, vested | 100M | 15.4% | VestingLocker: immutable, 3-month cliff, 12-month linear, earns no yield |
-| Developer payment, liquid | 47M | 7.2% | Creator wallet `0x008baC045a4220Bf6755564C5eA2e1B271EB670F` — payment for building and open-sourcing this protocol, disclosed here rather than hidden |
-| Burned at genesis | 350M | — | totalSupply reduced; floor per token ratcheted up for all holders on day one |
+| Market (pool + ask wall) | 503M | 78.2% | PoolManager, positions held by LpLocker |
+| Developer allocation, vested | 100M | 15.6% | VestingLocker: immutable, 3-month cliff, 12-month linear, earns no yield |
+| Developer payment, liquid | 40M | 6.2% | Creator wallet `0x008baC045a4220Bf6755564C5eA2e1B271EB670F` — payment for building and open-sourcing this protocol, disclosed here rather than hidden; 7M of the original 47M already burned |
+| Burned | 357M | — | 350M at genesis (totalSupply reduction) + 7M redeemed by the developer (dead address); the floor divides by circulating supply, which only shrinks |
 
 Developer liquid at the deployer address: **0**. Every creator revenue stream (redemption fee 1%, 50% of early-redemption forfeitures, LP fees) is disclosed at [1971fi.com](https://1971fi.com) under Docs.
 
